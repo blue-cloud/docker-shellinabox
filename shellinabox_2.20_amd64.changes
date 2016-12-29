@@ -1,0 +1,39 @@
+Format: 1.8
+Date: Wed, 09 Nov 2016 09:52:24 -0800
+Source: shellinabox
+Binary: shellinabox
+Architecture: amd64
+Version: 2.20
+Distribution: unstable
+Urgency: medium
+Maintainer: Marc Singer <elf@debian.org>
+Changed-By: Marc Singer <elf@debian.org>
+Description: 
+ shellinabox - publish command line shell through AJAX interface
+Closes: 828542 839066 839067
+Changes: 
+ shellinabox (2.20) unstable; urgency=medium
+ .
+   * Fixed issue #222, LOGIN service
+   * Fixed issue #360, ignore escape sequences to fix dir listing
+   * Fix for function key presses
+   * Adjusting scale on IE
+   * New option to disable peer check (#364)
+   * Add option for custom SSH port
+   * Support for APL characters
+   * PDF documentation
+   * Fix for BSD build
+   * New ready event support
+   * OpenSSL 1.1 fixes  (Closes: #828542)
+   * May build with MUSL library
+   * Documentation added that SSL support is optional and requires
+     installation of openssl on Debian. (Closes: #839067)
+   * Jessie requires explicit installation of openssl because the default
+     package does not include the necessary utilities to support creation
+     of certificates. (Closes: #839066)
+Checksums-Sha1: 
+ dfa6567842f2f37ec63aff1486e09ee00cd3f687 123186 shellinabox_2.20_amd64.deb
+Checksums-Sha256: 
+ 0b720d7c6f1ac79d3d93162100c5944a6bffd71c18ff241465f26d99bd82208e 123186 shellinabox_2.20_amd64.deb
+Files: 
+ a925cab42c83117195b9b9ade6c2b00a 123186 web optional shellinabox_2.20_amd64.deb
