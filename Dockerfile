@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-ENV SIAB_VERSION=2.19 \
+ENV SIAB_VERSION=2.20 \
   SIAB_USERCSS="Normal:+/etc/shellinabox/options-enabled/00+Black-on-White.css,Reverse:-/etc/shellinabox/options-enabled/00_White-On-Black.css;Colors:+/etc/shellinabox/options-enabled/01+Color-Terminal.css,Monochrome:-/etc/shellinabox/options-enabled/01_Monochrome.css" \
   SIAB_PORT=4200 \
   SIAB_ADDUSER=true \
@@ -17,9 +17,10 @@ ENV SIAB_VERSION=2.19 \
   SIAB_PKGS=none \
   SIAB_SCRIPT=none
 
+ADD shellinabox_${SIAB_VERSION}_amd64.deb /root/
+RUN dpkg -i  /root/shellinabox_${SIAB_VERSION}_amd64.deb && rm -f /root/*.deb
 RUN apt-get update && apt-get install -y openssl curl openssh-client sudo \
 	autoconf cpio bc build-essential gcc-multilib bison gettext flex patch texinfo lzma \
-      shellinabox=${SIAB_VERSION} && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   ln -sf '/etc/shellinabox/options-enabled/00+Black on White.css' \
